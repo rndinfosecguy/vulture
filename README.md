@@ -6,8 +6,10 @@ WhatsApp Online Tracker
 1. About
 2. Requirements
 3. Usage
-4. Example
-5. Report
+4. Reports
+5. Example
+6. Report
+7. License Hints
 
 ---
 
@@ -31,9 +33,17 @@ Code is still under developement and needs a lot improvement. It is meant as a p
 4. Open the web developer console
 5. Insert the JavaScript code available inside the file `inject.js`
 6. Wait for data added to `data.csv` as soon as the user is online
-7. Analyse the data collected in `data.csv`.
+7. Analyse the data collected in `data.csv`
 
-## 4. Example
+## 4. Reports
+1. Switch to the folder `reporting`
+2. `python3 reportserver.py`
+This script performs the following actions:
+* Starting a reporting web server on port `81`
+* Generating and updating a HTML for the target every 60 seconds
+Access your browser on http://localhost:81 to view the report.
+
+## 5. Example
 Output on the screenshots may differ in newer versions.
 
 Injecting JavaScript code to the developer console in WhatsApp Web.
@@ -42,7 +52,7 @@ Injecting JavaScript code to the developer console in WhatsApp Web.
 Saving online times to disk via Python 3 CGI script
 ![saving online times to disk](https://got-hacked.wtf/hsgwza72543s976_2.png)
 
-## 5. Report
+## 6. Report
 The Python script `report.py` allows you to generate a simple HTML file based on the data inside the file `data.csv`.
 
 * red items - User was not online during this range
@@ -58,3 +68,7 @@ Red Item - User was not online
 
 Green Item - Users online times
 ![example report](https://got-hacked.wtf/hsgwza72543s976_5.png)
+
+## 7. License Hints
+This code is published under the MIT license. For more information view the LICENSE file.
+Other licenses: The code of the reporting module makes use of the punchcard-js implementation of David Hazinski. For more information have a look at his website (http://bl.ocks.org/kaezarrex/10122633). The license file of his code is also embedded in the LICENSE file mentioned above.
