@@ -8,8 +8,7 @@ WhatsApp Online Tracker
 3. Usage
 4. Reports
 5. Example
-6. Report
-7. License Hints
+6. License Hints
 
 ---
 
@@ -30,7 +29,7 @@ Code is still under developement and needs a lot improvement. It is meant as a p
 1. Set permissions for the CGI Python 3 server: `chmod a+x cgi-bin/exfil.py`
 2. Set writeable permissions for `data.csv`
 3. Start the CGI Server: `python3 server.py`
-4. Open WhatsApp web and select the user to track
+4. Open WhatsApp web and select the user to track. If you have multiple chats in WhatsApp it is recommended to pin the user you want to track. This means the user will always be at the top and guarantees that the tracking script works properly.
 5. Open the web developer console
 6. Insert the JavaScript code available inside the file `inject.js`
 7. Wait for data added to `data.csv` as soon as the user is online
@@ -38,14 +37,14 @@ Code is still under developement and needs a lot improvement. It is meant as a p
 
 ## 4. Reports
 1. Switch to the folder `reporting`
-2. `python3 reportserver.py`
-This script performs the following actions:
+2. Execute `python3 reportserver.py` - This script performs the following actions:
 * Starting a reporting web server on port `81`
-* Generating and updating a HTML for the target every 60 seconds
+* Generating and updating a HTML file for the target every 60 seconds
+
 Access your browser on http://localhost:81 to view the report.
 
 ## 5. Example
-Output on the screenshots may differ in newer versions.
+Output may differ from screenshots in newer versions.
 
 Injecting JavaScript code to the developer console in WhatsApp Web.
 ![injecting JavaScript code](https://got-hacked.wtf/hsgwza72543s976_1.png)
@@ -53,13 +52,10 @@ Injecting JavaScript code to the developer console in WhatsApp Web.
 Saving online times to disk via Python 3 CGI script
 ![saving online times to disk](https://got-hacked.wtf/hsgwza72543s976_2.png)
 
-## 6. Report
-The Python script `report.py` allows you to generate a simple HTML file based on the data inside the file `data.csv`.
+Report example:
 
 * red items - User was not online during this range
 * green items - User was online in this range - click on the item for details
-
-Example report:
 
 Overview
 ![example report](https://got-hacked.wtf/hsgwza72543s976_3.png#1)
@@ -70,6 +66,6 @@ Red Item - User was not online
 Green Item - Users online times
 ![example report](https://got-hacked.wtf/hsgwza72543s976_5.png)
 
-## 7. License Hints
+## 6. License Hints
 This code is published under the MIT license. For more information view the LICENSE file.
 Other licenses: The code of the reporting module makes use of the punchcard-js implementation of David Hazinski. For more information have a look at his website (http://bl.ocks.org/kaezarrex/10122633). The license file of his code is also embedded in the LICENSE file mentioned above.
