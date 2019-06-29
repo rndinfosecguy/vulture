@@ -28,12 +28,13 @@ Code is still under developement and needs a lot improvement. It is meant as a p
 
 ## 3. Usage
 1. Set permissions for the CGI Python 3 server: `chmod a+x cgi-bin/exfil.py`
-2. Start the CGI Server: `python3 server.py`
-3. Open WhatsApp web and select the user to track
-4. Open the web developer console
-5. Insert the JavaScript code available inside the file `inject.js`
-6. Wait for data added to `data.csv` as soon as the user is online
-7. Analyse the data collected in `data.csv`
+2. Set writeable permissions for `data.csv`
+3. Start the CGI Server: `python3 server.py`
+4. Open WhatsApp web and select the user to track
+5. Open the web developer console
+6. Insert the JavaScript code available inside the file `inject.js`
+7. Wait for data added to `data.csv` as soon as the user is online
+8. Analyse the data collected in `data.csv`
 
 ## 4. Reports
 1. Switch to the folder `reporting`
