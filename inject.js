@@ -1,5 +1,5 @@
 var online = document.getElementsByClassName("_315-i");
-var user = document.getElementsByClassName("_19RFN");
+var user = document.getElementsByClassName("_19vo_")[0].getElementsByClassName("_19RFN");
 var startTime = "DUMMY";
 var endTime = "DUMMY";
 
@@ -13,12 +13,12 @@ function trackuser() {
 			var encodedDate = encodeURIComponent(date);
 			var encodedTime = encodeURIComponent(time);
 			try {
-				if (online[0].innerText == "online" || online[0].innerText == "typing...") {
+				if (online.length > 0 && (online[0].innerText == "online" || online[0].innerText == "typing..." || online[0].innerText == "en línea" || online[0].innerText == "escribiendo...")) {
 					if (startTime == "DUMMY") {
 						startTime = encodedTime;
 					}
 					endTime = encodedTime;
-					console.log("User online! (" + user[0].innerText + ")");
+					console.log("User online! (" + user[0].title + ")");
 				} else {
 					if (startTime != "DUMMY") {
 						var encodedUser = encodeURIComponent(user[0].innerText);
@@ -28,11 +28,15 @@ function trackuser() {
 						startTime = "DUMMY";
 						endTime = "DUMMY";
 					} else {
-						console.log("User not online. Last online: " + online[0].innerText + " (Not sending)");
+						if(online.length > 0) {
+                            				console.log("User "+ user[0].title + " not online. Last online: " + online[0].innerText + " (Not sending)");
+                        			} else {
+				           		console.log("User "+ user[0].title + " not online - Privacy mode activated");
+						}
 					}
 				}
 			} catch(error) {
-				console.error("User not online - Privacy mode activated (" + error + ")");
+				console.log("User "+ user[0].title +" not online - Privacy mode activated (" + error + ")");
 			}
 			trackuser();
 		}, 1000);
