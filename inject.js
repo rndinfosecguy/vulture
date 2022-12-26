@@ -1,5 +1,5 @@
-var online = document.getElementsByClassName("_315-i");
-var user = document.getElementsByClassName("_19vo_")[0].getElementsByClassName("_19RFN");
+var online = document.getElementsByClassName("_2YPr_ i0jNr selectable-text copyable-text");
+var user = document.getElementsByClassName("ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr");
 var startTime = "DUMMY";
 var endTime = "DUMMY";
 
@@ -29,9 +29,9 @@ function trackuser() {
 						endTime = "DUMMY";
 					} else {
 						if(online.length > 0) {
-                            				console.log("User "+ user[0].title + " not online. Last online: " + online[0].innerText + " (Not sending)");
-                        			} else {
-				           		console.log("User "+ user[0].title + " not online - Privacy mode activated");
+							console.log("User "+ user[0].title + " not online. Last online: " + online[0].innerText + " (Not sending)");
+						} else {
+							console.log("User "+ user[0].title + " not online - Privacy mode activated");
 						}
 					}
 				}
