@@ -32,6 +32,7 @@ Code is still under developement and needs a lot improvement. It is meant as a p
 4. Open WhatsApp web and select the user to track. If you have multiple chats in WhatsApp you should pin the user you want to track. This means the user will always be at the top and guarantees that the tracking script works properly.
 5. Open the web developer console
 6. Insert the JavaScript code available inside the file `inject.js`
+(6.5 Sometimes the status "last seen" magically disappears even if the user does not have strict privacy settings. If that is the case just click again on the user in the left menu and the status is back)
 7. Wait for data added to `data.csv` as soon as the user is online
 8. Analyse the data collected in `data.csv`
 

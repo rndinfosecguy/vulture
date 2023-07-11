@@ -1,5 +1,24 @@
-var online = document.getElementsByClassName("_2YPr_ i0jNr selectable-text copyable-text");
-var user = document.getElementsByClassName("ggj6brxn gfz4du6o r7fjleex g0rxnol2 lhj4utae le5p0ye3 l7jjieqr i0jNr");
+var UserClass = "";
+var lastOnline = "";
+
+for(let i = 0; i <= document.getElementsByTagName("span").length; i++) {
+    try {
+        if(document.getElementsByTagName("span")[i].hasAttribute("data-testid")) {
+            if (document.getElementsByTagName("span")[i].getAttribute("data-testid") == "conversation-info-header-chat-title") {
+                UserClass = document.getElementsByTagName("span")[i].getAttribute("class");
+            }
+        }
+
+        if(document.getElementsByTagName("span")[i].hasAttribute("title")) {
+            if (document.getElementsByTagName("span")[i].innerText.includes("last seen") || document.getElementsByTagName("span")[i].innerText.includes("zuletzt online")){
+                lastOnline = document.getElementsByTagName("span")[i].getAttribute("class");
+            }
+        }
+    } catch {}
+}
+
+var online = document.getElementsByClassName(lastOnline);
+var user = document.getElementsByClassName(UserClass);
 var startTime = "DUMMY";
 var endTime = "DUMMY";
 
