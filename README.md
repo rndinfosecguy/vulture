@@ -15,6 +15,8 @@ WhatsApp Online Tracker
 ## 1. About 
 This small snippets allows you to track a users WhatsApp behavior exploiting the WhatsApp web implementation. It monitors the users online-offline activity. At the moment it is only possible to monitor one user at the same time. The collected material is stored in a CSV file on your tracking machine.
 
+Due to latest changes, currently the tracker only supports english and german language settings.
+
 ### IMPORTANT NOTE
 Code is still under developement and needs a lot improvement. It is meant as a personal PoC, but maybe some of will find it useful. If you have any questions, sugesstions or see bugs just let me know.
 
